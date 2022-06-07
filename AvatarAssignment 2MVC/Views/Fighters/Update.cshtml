@@ -1,0 +1,53 @@
+﻿@model AvatarAssignment_2MVC.Models.Fighter
+
+<form method="post" asp-action="Update">
+    <input asp-for="ID" hidden />
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Update Fighters</h2>
+        </div>
+        <div class="row">
+            <div class="col-16">
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="BenderName"></label>@*These names come from our properties in the model *@
+                    </div>
+                    <div class="col-3">
+                        <label asp-for="City"></label>
+                    </div>
+                    <div class="col-3">
+                        <label asp-for="Weapon"></label>
+                    </div>
+                    <div class="col-3">
+                        <label asp-for="FightingStyles"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <input asp-for="BenderName" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <input asp-for="City" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <input asp-for="Weapon" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <input asp-for="FightingStyles" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-75" value="Update" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-danger w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
