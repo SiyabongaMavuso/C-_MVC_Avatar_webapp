@@ -62,5 +62,33 @@ namespace AvatarAssignment_2MVC.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+        //Delete 
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Fighters.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        //Post Delete 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+            var obj = _db.Fighters.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.Fighters.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

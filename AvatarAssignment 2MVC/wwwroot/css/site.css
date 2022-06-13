@@ -59,11 +59,11 @@ html {
 }
 
 body {
+    background-image: url('a1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
 }
 .footer {
   position: absolute;
